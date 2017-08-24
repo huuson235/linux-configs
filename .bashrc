@@ -98,8 +98,11 @@ alias counta='find -maxdepth 1 -type f | wc -l'
 alias suspend='systemctl suspend'
 alias cvmain='g++ main.cpp -o main `pkg-config --cflags --libs opencv` && ./main'
 alias nvimrc='sudo nvim ~/.config/nvim/init.vim'
-alias vimrc='vim ~/.vimrc'
-
+alias vimrc='sudo vim ~/.vimrc'
+alias bashrc='sudo vim ~/.bashrc'
+alias tmuxc='TERM=screen-256color-bce tmux'
+alias tmuxrc='sudo vim ~/.tmux.conf'
+alias ycm='vim ~/.vim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -141,3 +144,4 @@ export PYTHONPATH=/home/huuson235/lib-src/facenet/src
 export PYTHONPATH=/home/huuson235/lib-src/caffe-rc5/python
 export PYTHONPATH=/home/lib-src/caffe2/build/caffe2/python
 export PATH="$HOME/.cargo/bin:$PATH"
+export TERM="xterm-256color"

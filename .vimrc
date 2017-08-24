@@ -8,14 +8,25 @@ Plug 'vim-airline/vim-airline-themes'
 " Themes for coding
 Plug 'octol/vim-cpp-enhanced-highlight'
 " Tools
+Plug 'valloric/youcompleteme'
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 "======================= Config themes ======================= 
+" use 256 colors in terminal
+"if !has("gui_running")
+    "set t_Co=256
+    "set term=screen-256color
+"endif 
 colorscheme gruvbox
 set termguicolors
+set tabstop=4
+set shiftwidth=4
+set expandtab
 "let ayucolor="light"
 "let ayucolor="mirage"
 "let ayucolor="dark"
@@ -76,3 +87,9 @@ let g:cpp_concepts_highlight = 1
 "======================= CTRL P ======================= 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+
+"======================= YOU COMPLETEME ======================= 
+let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+map <leader>[ :YcmCompleter GoTo<cr>
+"======================= CTAGS ======================= 
+map <C-[> <C-t>
