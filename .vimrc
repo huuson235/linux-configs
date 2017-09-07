@@ -14,6 +14,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'majutsushi/tagbar'
+Plug 'yggdroot/indentline'
 call plug#end()
 
 "======================= Config themes ======================= 
@@ -58,8 +60,6 @@ set directory=/tmp
 " Map leader key
 let mapleader = "," " map leader key to ,
 let g:mapleader = ","
-" Fast saving
-nmap <leader>w :w!<cr>
 " Map Esc to jj
 :imap jj <Esc>
 " Hide highlight
@@ -75,7 +75,6 @@ map <C-k> <C-W>k
 map <C-l> <C-W>l
 map <C-h> <C-W>h
 
-map <C-n> :NERDTreeToggle<CR>
 
 "======================= C++ HIGHLIGHT ======================= 
 let g:cpp_class_scope_highlight = 1
@@ -91,5 +90,27 @@ let g:ctrlp_cmd = 'CtrlP'
 "======================= YOU COMPLETEME ======================= 
 let g:ycm_global_ycm_extra_conf = '~/.vim/plugged/youcompleteme/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 map <leader>[ :YcmCompleter GoTo<cr>
+let g:ycm_add_preview_to_completeopt = 1
+set splitbelow
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_min_num_identifier_candidate_chars = 1
+let g:ycm_error_symbol = 'X'
+let g:ycm_warning_symbol = '>>'
 "======================= CTAGS ======================= 
-map <C-[> <C-t>
+"map <C-[> <C-t>
+map <leader>[ :po<CR>
+map <leader>] <C-]>
+"======================= TARBAR =======================
+map <leader>b :TagbarToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
+"======================= INDENTLINE ======================= 
+let g:indentLine_color_term = 200
+let g:indentLine_bgcolor_term = 202
+map <leader>i :IndentLinesToggle<CR>
+
+"======================= TABS =======================  
+map <leader>q :tabprevious<CR>
+map <leader>e :tabnext<CR>
+map <leader>w :tabclose<CR>
+map <leader>r :tabnew<CR>
+
